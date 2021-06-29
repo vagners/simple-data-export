@@ -101,6 +101,12 @@ namespace SimpleDataExport
             AddHeader(header, columnType, 0, maskFormat);
             return this;
         }
+		
+		public ReportBuilder AddHeader(string header, Func<object, string> func)
+        {
+            AddHeader(header, func, 0);
+            return this;
+        }
 
         public ReportBuilder AddHeader(string header, Func<object, string> func, float width)
         {
